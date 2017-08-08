@@ -32,3 +32,9 @@ allow qti_init_shell regionalization_file:file create_file_perms;
 
 r_dir_file(qti_init_shell, sysfs_devfreq_l3cdsp)
 allow qti_init_shell sysfs_devfreq_l3cdsp:file setattr;
+
+# For VR
+set_prop(qti_init_shell, ctl_qvrd_prop)
+
+# For LPMs
+allow qti_init_shell sysfs_msm_power:file rw_file_perms;
